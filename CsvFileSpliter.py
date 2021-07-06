@@ -14,10 +14,13 @@ class CsvFileSpliter():
         self.master.title("CSV FILE SPLITER")
         self.master.geometry("250x300")
         self.master.resizable(False, False)
+        self.filename = ""
         
         self.menu = Menu(self.master)
         
         self.file_menu = Menu(self.menu, tearoff=0)
+        self.file_menu.add_command(label="Insert a csv file",
+                                   accelerator='Ctrl+O', command=self.insertfile)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         
