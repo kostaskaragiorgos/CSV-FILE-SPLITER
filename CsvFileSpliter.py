@@ -1,5 +1,6 @@
 from tkinter import Menu, Button, StringVar, OptionMenu, messagebox as msg, Tk, Label
 from tkinter import simpledialog, filedialog
+import pandas as pd
 
 def helpmenu():
     msg.showinfo("Help", "Split your csv files")
@@ -41,6 +42,14 @@ class CsvFileSpliter():
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
+
+    def checkfile(self):
+        """ checks if inserted file is a csv """
+        if self.filename.endswith('.csv'):
+            msg.showinfo("SUCCESSFUL INSERTION", "YOUR CSV FILE HAS SUCCESFULLY INSERTED")
+            self.df = pd.read_csv(self.filename)
+        else:
+            msg.showerror("INSERT A CSV", "YOU HAVE TO INSERT A CSV FILE")
     
 
     def insertfile(self):
