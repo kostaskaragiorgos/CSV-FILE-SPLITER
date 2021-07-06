@@ -4,6 +4,10 @@ from tkinter import simpledialog
 def helpmenu():
     msg.showinfo("Help", "Split your csv files")
 
+    
+def aboutmenu():
+    msg.showinfo("About", "CSV FILE SPLITER\nVersion 1.0")
+
 class CsvFileSpliter():
     def __init__(self, master):
         self.master = master
@@ -18,7 +22,7 @@ class CsvFileSpliter():
         self.menu.add_cascade(label="File", menu=self.file_menu)
         
         self.about_menu = Menu(self.menu, tearoff=0)
-        self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=self.aboutmenu)
+        self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=aboutmenu)
         self.menu.add_cascade(label="About", menu=self.about_menu)
         
         self.help_menu = Menu(self.menu, tearoff=0)
@@ -28,19 +32,13 @@ class CsvFileSpliter():
         self.master.config(menu=self.menu)
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
-        self.master.bind('<Control-i>', lambda event: self.aboutmenu())
+        self.master.bind('<Control-i>', lambda event: aboutmenu())
 
 
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
     
-
-    
-    def aboutmenu():
-        pass
-
-
 def main():
     root = Tk()
     CsvFileSpliter(root)
