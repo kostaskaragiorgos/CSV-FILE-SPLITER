@@ -16,6 +16,10 @@ class CsvFileSpliter():
         self.master.geometry("250x300")
         self.master.resizable(False, False)
         self.filename = ""
+
+
+        self.splitb = Button(self.master, text="SPLIT", command=self.split)
+        self.splitb.pack()
         
         self.menu = Menu(self.master)
         
@@ -40,6 +44,8 @@ class CsvFileSpliter():
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
 
+    def split(self):
+        pass
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
