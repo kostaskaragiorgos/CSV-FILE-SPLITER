@@ -25,6 +25,8 @@ class CsvFileSpliter():
         self.startinglinet.pack()
 
 
+
+
         self.splitb = Button(self.master, text="SPLIT", command=self.split)
         self.splitb.pack()
         
