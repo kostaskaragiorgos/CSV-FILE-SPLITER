@@ -1,6 +1,6 @@
 from tkinter import Menu, Button, StringVar, OptionMenu, Widget, messagebox as msg, Tk, Label
-from tkinter import simpledialog, filedialog
-from typing import Text
+from tkinter import simpledialog, filedialog, Text
+
 import pandas as pd
 
 def helpmenu():
@@ -25,7 +25,11 @@ class CsvFileSpliter():
         self.startinglinet.pack()
 
 
+        self.lastlineleb = Label(self.master, text="Enter the last Line")
+        self.lastlineleb.pack()
 
+        self.lastlinet = Text(self.master, height=1, width=4)
+        self.lastlinet.pack()
 
         self.splitb = Button(self.master, text="SPLIT", command=self.split)
         self.splitb.pack()
