@@ -59,6 +59,7 @@ class CsvFileSpliter():
 
     def split(self):
         pass
+    
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
