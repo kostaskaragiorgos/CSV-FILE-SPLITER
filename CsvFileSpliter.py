@@ -1,5 +1,6 @@
-from tkinter import Menu, Button, StringVar, OptionMenu, messagebox as msg, Tk, Label
+from tkinter import Menu, Button, StringVar, OptionMenu, Widget, messagebox as msg, Tk, Label
 from tkinter import simpledialog, filedialog
+from typing import Text
 import pandas as pd
 
 def helpmenu():
@@ -16,6 +17,12 @@ class CsvFileSpliter():
         self.master.geometry("250x300")
         self.master.resizable(False, False)
         self.filename = ""
+
+        self.flineleb = Label(self.master, text="Enter the Starting Line")
+        self.flineleb.pack()
+
+        self.startinglinet = Text(self.master, height=1, width=4)
+        self.startinglinet.pack()
 
 
         self.splitb = Button(self.master, text="SPLIT", command=self.split)
