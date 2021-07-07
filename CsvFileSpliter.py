@@ -69,6 +69,8 @@ class CsvFileSpliter():
             if int(self.startinglinet.get(1.0,END)) >= int(self.lastlinet.get(1.0,END)):
                 msg.showerror("ERROR", "Starting line should be lower than the last line")
             elif int(self.startinglinet.get(1.0,END)) < int(self.lastlinet.get(1.0,END)) and int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
+                subset = self.df.iloc[int(self.startinglinet.get(1.0,END)):int(self.lastlinet.get(1.0,END))]
+                subset.to_csv("test.csv",index=False)
                 msg.showinfo("SUCCESS", "SUCCESS")
     
     def exitmenu(self):
