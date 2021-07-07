@@ -1,5 +1,6 @@
 from tkinter import Menu, Button, StringVar, OptionMenu, Widget, messagebox as msg, Tk, Label
 from tkinter import simpledialog, filedialog, Text, IntVar, Checkbutton
+from tkinter.constants import END
 
 import pandas as pd
 
@@ -62,7 +63,13 @@ class CsvFileSpliter():
 
 
     def split(self):
-        pass
+        if self.filename == "":
+            msg.showerror("ERROR", "NO FILE IMPORTED")
+        else:
+            if int(self.startinglinet.get(1.0,END)) >= int(self.lastlinet.get(1.0,END)):
+                msg.showerror("ERROR", "Starting line should be lower than the last line")
+            elif int(self.startinglinet.get(1.0,END)) < int(self.lastlinet.get(1.0,END)) and int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
+                msg.showinfo("SUCCESS", "SUCCESS")
     
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
