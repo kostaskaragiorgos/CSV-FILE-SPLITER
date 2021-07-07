@@ -18,6 +18,7 @@ class CsvFileSpliter():
         self.master.geometry("250x300")
         self.master.resizable(False, False)
         self.filename = ""
+        self.df = ""
 
         self.flineleb = Label(self.master, text="Enter the Starting Line")
         self.flineleb.pack()
@@ -44,6 +45,7 @@ class CsvFileSpliter():
         self.file_menu = Menu(self.menu, tearoff=0)
         self.file_menu.add_command(label="Insert a csv file",
                                    accelerator='Ctrl+O', command=self.insertfile)
+        self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         
@@ -60,6 +62,17 @@ class CsvFileSpliter():
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
+
+    
+    def closefile(self):
+        """ closes the csv file """
+        if not ".csv" in self.filename:
+            msg.showerror("ERROR", "NO CSV TO CLOSE")
+        else:
+            self.filename = ""
+            self.df = ""
+            msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
+
 
 
     def split(self):
