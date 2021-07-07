@@ -24,6 +24,13 @@
 
 ## Files/Folders
 
+<ul>
+  <li> ./images </li>
+  <li> ./doc </li>
+  <li> keybinds.txt </li>
+</ul>
+
+
 
 ## Dependencies
 
