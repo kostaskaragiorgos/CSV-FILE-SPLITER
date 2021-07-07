@@ -37,6 +37,10 @@ class CsvFileSpliter():
         self.chb = Checkbutton(master, text="Keep Columns", variable=self.var1)
         self.chb.pack()
 
+        self.var2 = IntVar()
+        self.chb2 = Checkbutton(master, text="Delete from orignial file", variable=self.var2)
+        self.chb2.pack()
+
         self.splitb = Button(self.master, text="SPLIT", command=self.split)
         self.splitb.pack()
         
