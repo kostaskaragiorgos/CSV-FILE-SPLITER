@@ -1,5 +1,5 @@
 from tkinter import Menu, Button, StringVar, OptionMenu, Widget, messagebox as msg, Tk, Label
-from tkinter import simpledialog, filedialog, Text
+from tkinter import simpledialog, filedialog, Text, IntVar, Checkbutton
 
 import pandas as pd
 
@@ -30,6 +30,10 @@ class CsvFileSpliter():
 
         self.lastlinet = Text(self.master, height=1, width=4)
         self.lastlinet.pack()
+
+        self.var1 = IntVar()
+        self.chb = Checkbutton(master, text="Keep Columns", variable=self.var1)
+        self.chb.pack()
 
         self.splitb = Button(self.master, text="SPLIT", command=self.split)
         self.splitb.pack()
