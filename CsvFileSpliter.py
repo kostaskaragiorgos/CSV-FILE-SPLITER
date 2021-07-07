@@ -15,7 +15,7 @@ class CsvFileSpliter():
     def __init__(self, master):
         self.master = master
         self.master.title("CSV FILE SPLITER")
-        self.master.geometry("250x300")
+        self.master.geometry("250x250")
         self.master.resizable(False, False)
         self.filename = ""
         self.df = ""
@@ -88,7 +88,7 @@ class CsvFileSpliter():
             msg.showerror("ERROR", "NO FILE IMPORTED")
         elif int(self.startinglinet.get(1.0,END)) >= int(self.lastlinet.get(1.0,END)):
                 msg.showerror("ERROR", "Starting line should be lower than the last line")
-        elif int(self.startinglinet.get(1.0,END)) < int(self.lastlinet.get(1.0,END)) and int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
+        elif  int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
             self.savesplitedfile()
 
     def exitmenu(self):
