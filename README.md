@@ -44,6 +44,7 @@ pip install -r requirements.txt
 
 ## Current_Version
 
+<p><img src ="images/csv file spliter version.png" title = "Csv file spliter Version"/> </p>
 
 ## Documentation
 
@@ -53,19 +54,19 @@ All project documentation is located in the `./doc`  folder.
 
 ### Radon_cc
 
-
+<p><img src ="images/radon cc.png" title = "Csv File Spliter CC"/> </p>
 
 ### Radon_hal
 
-
+<p><img src ="images/radon hal.png" title = "Csv File Spliter HAL"/> </p>
 
 ### Radon_mi
 
-
+<p><img src ="images/radon mi.png" title = "Csv File Spliter MI"/> </p>
 
 ### Radon_raw
 
-
+<p><img src ="images/radon raw.png" title = "Csv File Spliter RAW"/> </p>
 
 ## Keybinds
 
