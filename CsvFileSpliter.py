@@ -82,6 +82,7 @@ class CsvFileSpliter():
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
 
     def deletefromoriginal(self):
+        """delete from the original file"""
         if self.var2.get():
             self.df.drop(self.df.index[int(self.startinglinet.get(1.0,END)) :int(self.lastlinet.get(1.0,END))], inplace=True)
 
