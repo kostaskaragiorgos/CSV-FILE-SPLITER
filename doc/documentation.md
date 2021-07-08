@@ -4,6 +4,9 @@
 
 ## Close File
 
+You can close a file using File --> Close file or using Cltr+F4 keybind
+
+<p><img src="doc images/file/closefmenu.png" title = "close file menu"/></p>
 
 ## Exit
 
