@@ -53,6 +53,7 @@ class CsvFileSpliter():
         self.file_menu.add_command(label="Insert a csv file",
                                    accelerator='Ctrl+O', command=self.insertfile)
         self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
+        self.file_menu.add_command(label="Split", accelerator='Ctrl+F5', command=self.split)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         
@@ -67,6 +68,7 @@ class CsvFileSpliter():
         self.master.config(menu=self.menu)
         self.master.bind('Control-o', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
+        self.master.bind('<Control-F5>', lambda event: self.split())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
