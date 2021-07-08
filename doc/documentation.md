@@ -2,6 +2,16 @@
 
 # File menu
 
+## Close File
+
+
+## Exit
+
+You can close the app using menu File --> Exit or using Alt+F4 keybind
+
+<p><img src = "File/exit menu.png" title="Exit Menu"/> </p>
+
+
 # About menu
 
 You can show info about the app by using menu About --> About or using Ctrl+i keybind
