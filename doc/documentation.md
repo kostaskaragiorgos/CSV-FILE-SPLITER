@@ -12,6 +12,9 @@ if there is no open csv file an error message pops up
 
 <p><img src = "File/close file error.png" title="No fie to close"/></p>
 
+else a success message pops up 
+
+<p><img src="File/close file success.png" title="close successful"/></p>
 
 ## Exit
 
