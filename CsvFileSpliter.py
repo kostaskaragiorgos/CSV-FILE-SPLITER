@@ -4,7 +4,9 @@ from tkinter.constants import END
 
 import pandas as pd
 
+
 def helpmenu():
+    """help menu function"""
     msg.showinfo("Help", "Split your csv files")
 
     
