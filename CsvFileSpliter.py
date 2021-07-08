@@ -11,6 +11,7 @@ def helpmenu():
 
     
 def aboutmenu():
+    """about menu function"""
     msg.showinfo("About", "CSV FILE SPLITER\nVersion 1.0")
 
 class CsvFileSpliter():
