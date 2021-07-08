@@ -6,7 +6,12 @@
 
 You can close a file using File --> Close file or using Cltr+F4 keybind
 
-<p><img src="doc images/file/closefmenu.png" title = "close file menu"/></p>
+<p><img src="File/close file.png" title = "close file menu"/></p>
+
+if there is no open csv file an error message pops up
+
+<p><img src = "File/close file error.png" title="No fie to close"/></p>
+
 
 ## Exit
 
