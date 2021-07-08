@@ -96,6 +96,7 @@ class CsvFileSpliter():
             subset.to_csv("test.csv", header=False)
 
     def split(self):
+        """the file split function"""
         if self.filename == "":
             msg.showerror("ERROR", "NO FILE IMPORTED")
         elif int(self.startinglinet.get(1.0,END)) >= int(self.lastlinet.get(1.0,END)):
