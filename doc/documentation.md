@@ -8,6 +8,9 @@ You can show info about the app by using menu About --> About or using Ctrl+i ke
 
 <p><img src="About/about menu.png" title="about menu"/></p>
 
+An informative message pops up
+
+<p><img src="About/about pop up.png" title="about menu"/></p> 
 
 # Help menu
 
