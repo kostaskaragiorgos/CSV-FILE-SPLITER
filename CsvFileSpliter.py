@@ -1,5 +1,6 @@
-from tkinter import Menu, Button, StringVar, OptionMenu, Widget, messagebox as msg, Tk, Label
-from tkinter import simpledialog, filedialog, Text, IntVar, Checkbutton
+""" Csv File Spliter"""
+from tkinter import Menu, Button, messagebox as msg, Tk, Label
+from tkinter import filedialog, Text, IntVar, Checkbutton
 from tkinter.constants import END
 
 import pandas as pd
@@ -86,12 +87,12 @@ class CsvFileSpliter():
     def deletefromoriginal(self):
         """delete from the original file"""
         if self.var2.get():
-            self.df.drop(self.df.index[int(self.startinglinet.get(1.0,END)) :int(self.lastlinet.get(1.0,END))], inplace=True)
+            self.df.drop(self.df.index[int(self.startinglinet.get(1.0, END)) :int(self.lastlinet.get(1.0, END))], inplace=True)
 
     
     def savesplitedfile(self):
         """saves the splited file"""
-        subset = self.df.iloc[int(self.startinglinet.get(1.0,END)):int(self.lastlinet.get(1.0,END))]
+        subset = self.df.iloc[int(self.startinglinet.get(1.0, END)):int(self.lastlinet.get(1.0, END))]
         if self.var1.get():
             subset.to_csv("test.csv", header=True)
         else:
@@ -101,9 +102,9 @@ class CsvFileSpliter():
         """the file split function"""
         if self.filename == "":
             msg.showerror("ERROR", "NO FILE IMPORTED")
-        elif int(self.startinglinet.get(1.0,END)) >= int(self.lastlinet.get(1.0,END)):
-                msg.showerror("ERROR", "Starting line should be lower than the last line")
-        elif  int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
+        elif int(self.startinglinet.get(1.0, END)) >= int(self.lastlinet.get(1.0, END)):
+            msg.showerror("ERROR", "Starting line should be lower than the last line")
+        elif  int(self.startinglinet.get(1.0, END)) < len(self.df) and int(self.lastlinet.get(1.0, END)) <= len(self.df):
             self.savesplitedfile()
             self.deletefromoriginal()
             msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
@@ -128,8 +129,8 @@ class CsvFileSpliter():
             msg.showerror("ERROR", "A CSV FILE IS ALREADY OPEN")
         else:
             self.filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
-                                                        filetypes=(("csv files", "*.csv"),
-                                                                    ("all files", "*.*")))
+                                                       filetypes=(("csv files", "*.csv"),
+                                                                  ("all files", "*.*")))
             self.checkfile()
 def main():
     """main functionn"""
