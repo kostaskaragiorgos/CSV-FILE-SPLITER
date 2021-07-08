@@ -106,7 +106,7 @@ class CsvFileSpliter():
         elif  int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
             self.savesplitedfile()
             self.deletefromoriginal()
-            msg.showinfo("SUCCESS", "SUCCESS")
+            msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
 
     def exitmenu(self):
         """exit menu function"""
