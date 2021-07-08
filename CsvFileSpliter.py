@@ -88,6 +88,7 @@ class CsvFileSpliter():
 
     
     def savesplitedfile(self):
+        """saves the splited file"""
         subset = self.df.iloc[int(self.startinglinet.get(1.0,END)):int(self.lastlinet.get(1.0,END))]
         if self.var1.get():
             subset.to_csv("test.csv", header=True)
