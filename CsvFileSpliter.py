@@ -107,6 +107,7 @@ class CsvFileSpliter():
             msg.showinfo("SUCCESS", "SUCCESS")
 
     def exitmenu(self):
+        """exit menu function"""
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
 
@@ -129,6 +130,7 @@ class CsvFileSpliter():
                                                                     ("all files", "*.*")))
             self.checkfile()
 def main():
+    """main functionn"""
     root = Tk()
     CsvFileSpliter(root)
     root.mainloop()
