@@ -78,14 +78,19 @@ class CsvFileSpliter():
             self.df = ""
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
 
+    def deletefromoriginal(self):
+        print(len(self.df))
+        if self.var2.get():
+            self.df.drop(self.df.index[int(self.startinglinet.get(1.0,END)) :int(self.lastlinet.get(1.0,END))], inplace=True)
+        print(len(self.df))
+
     
     def savesplitedfile(self):
         subset = self.df.iloc[int(self.startinglinet.get(1.0,END)):int(self.lastlinet.get(1.0,END))]
-        if self.var1 == 1:
+        if self.var1.get():
             subset.to_csv("test.csv", header=True)
         else:
             subset.to_csv("test.csv", header=False)
-        msg.showinfo("SUCCESS", "SUCCESS")
 
     def split(self):
         if self.filename == "":
@@ -94,6 +99,8 @@ class CsvFileSpliter():
                 msg.showerror("ERROR", "Starting line should be lower than the last line")
         elif  int(self.startinglinet.get(1.0,END)) < len(self.df) and int(self.lastlinet.get(1.0,END)) <= len(self.df):
             self.savesplitedfile()
+            self.deletefromoriginal()
+            msg.showinfo("SUCCESS", "SUCCESS")
 
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
