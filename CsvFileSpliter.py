@@ -17,6 +17,10 @@ def aboutmenu():
 
 
 def savefile():
+    """the desired file name of the user.
+    Returns:
+        filenamesave: the name of the file
+    """
     filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
                                                 filetypes=(("csv files", "*.csv"),
                                                             ("all files", "*.*")))
