@@ -89,6 +89,7 @@ class CsvFileSpliter():
         self.master.bind('<Control-s>', lambda event: self.savesplitedfile())
         self.master.bind('<Control-F5>', lambda event: self.split())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
+        self.master.bind('<Alt-F5>', lambda event: self.showsplited())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
