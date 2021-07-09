@@ -28,6 +28,14 @@ An informative message pops up
 
 You press ok to close the app or cancel if you don't want
 
+# Show menu
+
+## Show Splited
+
+You can show info about the app by using menu Show Splited or using Alt+F5 keybind
+
+<p><img src="Show/Show Splited.png" title="Show Splited"/></p>
+
 
 # About menu
 
