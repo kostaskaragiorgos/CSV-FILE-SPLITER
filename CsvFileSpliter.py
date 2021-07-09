@@ -15,6 +15,13 @@ def aboutmenu():
     """about menu function"""
     msg.showinfo("About", "CSV FILE SPLITER\nVersion 1.0")
 
+
+def savefile():
+    filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                filetypes=(("csv files", "*.csv"),
+                                                            ("all files", "*.*")))
+
+    return filenamesave
 class CsvFileSpliter():
     def __init__(self, master):
         self.master = master
@@ -74,6 +81,7 @@ class CsvFileSpliter():
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
+        
     
     def closefile(self):
         """ closes the csv file """
@@ -93,10 +101,17 @@ class CsvFileSpliter():
     def savesplitedfile(self):
         """saves the splited file"""
         subset = self.df.iloc[int(self.startinglinet.get(1.0, END)):int(self.lastlinet.get(1.0, END))]
-        if self.var1.get():
-            subset.to_csv("test.csv", header=True)
+        filenamesave = savefile()
+        if '.csv' in filenamesave:
+            if self.var1.get():
+                subset.to_csv(str(filenamesave), header=True)
+            else:
+                subset.to_csv(str(filenamesave), header=False)
         else:
-            subset.to_csv("test.csv", header=False)
+            if self.var1.get():
+                subset.to_csv("test.csv", header=True)
+            else:
+                subset.to_csv("test.csv", header=False)
 
     def split(self):
         """the file split function"""
