@@ -36,6 +36,8 @@ You can show info about the app by using menu Show Splited or using Alt+F5 keybi
 
 <p><img src="Show/Show Splited.png" title="Show Splited"/></p>
 
+An informative message pops up
+
 
 # About menu
 
