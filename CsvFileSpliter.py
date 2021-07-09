@@ -69,6 +69,11 @@ class CsvFileSpliter():
         self.file_menu.add_command(label="Split", accelerator='Ctrl+F5', command=self.split)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
+
+
+        self.show_menu = Menu(self.menu, tearoff=0)
+        self.show_menu.add_command(label="Show Splited", accelerator='Alt+F5', command=self.showsplited)
+        self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.about_menu = Menu(self.menu, tearoff=0)
         self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=aboutmenu)
@@ -87,6 +92,9 @@ class CsvFileSpliter():
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
+    
+    def showsplited(self):
+        pass
         
     
     def closefile(self):
