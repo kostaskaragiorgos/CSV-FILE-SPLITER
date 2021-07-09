@@ -16,6 +16,13 @@ else a success message pops up
 
 <p><img src="File/close file success.png" title="close successful"/></p>
 
+
+## Save File
+
+You can close the app using menu File --> Save file or using Ctrl+S keybind
+
+<p><img src="File/save file.png" title="close successful"/></p>
+
 ## Exit
 
 You can close the app using menu File --> Exit or using Alt+F4 keybind
