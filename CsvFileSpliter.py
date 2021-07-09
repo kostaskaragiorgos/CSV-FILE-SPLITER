@@ -96,6 +96,7 @@ class CsvFileSpliter():
 
     
     def showsplited(self):
+        """shows the splited file"""
         if not isinstance(self.subset, pd.DataFrame):
             msg.showerror("ERROR", "NO FILE TO SHOW")
         else:
