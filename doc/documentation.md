@@ -36,6 +36,10 @@ You can show info about the app by using menu Show Splited or using Alt+F5 keybi
 
 <p><img src="Show/Show Splited.png" title="Show Splited"/></p>
 
+If there is no splited file to show an error message pops up
+
+<p><img src="Show/show splited error.png" title="Show Splited Error"/></p>
+
 An informative message pops up
 
 
