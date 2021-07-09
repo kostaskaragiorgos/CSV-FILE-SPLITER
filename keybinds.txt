@@ -6,6 +6,10 @@ Save file Ctrl+S
 Split Ctrl+F5
 Exit Alt+F4
 =============
+Show menu
+===================
+Show Splited Alt+F5
+===================
 About menu
 ============
 About Ctrl+I
