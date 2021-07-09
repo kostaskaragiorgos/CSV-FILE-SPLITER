@@ -34,6 +34,7 @@ class CsvFileSpliter():
         self.master.resizable(False, False)
         self.filename = ""
         self.df = ""
+        self.subset = ""
 
         self.flineleb = Label(self.master, text="Enter the Starting Line")
         self.flineleb.pack()
@@ -95,8 +96,10 @@ class CsvFileSpliter():
 
     
     def showsplited(self):
-        pass
-        
+        if not isinstance(self.subset, pd.DataFrame):
+            msg.showerror("ERROR", "NO FILE TO SHOW")
+        else:
+            msg.showinfo("SPLITED FILE", str(self.subset))
     
     def closefile(self):
         """ closes the csv file """
@@ -115,14 +118,14 @@ class CsvFileSpliter():
     
     def savesplitedfile(self):
         """saves the splited file"""
-        subset = self.df.iloc[int(self.startinglinet.get(1.0, END)):int(self.lastlinet.get(1.0, END))]
+        self.subset = self.df.iloc[int(self.startinglinet.get(1.0, END)):int(self.lastlinet.get(1.0, END))]
         filenamesave = savefile()
         if ".csv" not in filenamesave:
             filenamesave = "test.csv"
         if self.var1.get():
-            subset.to_csv(str(filenamesave), header=True)
+            self.subset.to_csv(str(filenamesave), header=True)
         else:
-            subset.to_csv(str(filenamesave), header=False)
+            self.subset.to_csv(str(filenamesave), header=False)
         msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
 
 
@@ -131,9 +134,9 @@ class CsvFileSpliter():
         """the file split function"""
         if self.filename == "":
             msg.showerror("ERROR", "NO FILE IMPORTED")
-        elif int(self.startinglinet.get(1.0, END)) >= int(self.lastlinet.get(1.0, END)):
+        elif int(str(self.startinglinet.get(1.0, END))) >= int(str(self.lastlinet.get(1.0, END))):
             msg.showerror("ERROR", "Starting line should be lower than the last line")
-        elif  int(self.startinglinet.get(1.0, END)) < len(self.df) and int(self.lastlinet.get(1.0, END)) <= len(self.df):
+        elif  int(str(self.startinglinet.get(1.0, END))) < len(self.df) and int(str(self.lastlinet.get(1.0, END))) <= len(self.df):
             self.savesplitedfile()
             self.deletefromoriginal()
             
