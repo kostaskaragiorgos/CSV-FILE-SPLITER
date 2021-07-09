@@ -65,6 +65,7 @@ class CsvFileSpliter():
         self.file_menu.add_command(label="Insert a csv file",
                                    accelerator='Ctrl+O', command=self.insertfile)
         self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
+        self.file_menu.add_command(label="Save file", accelerator="Ctrl+O", command=self.savesplitedfile)
         self.file_menu.add_command(label="Split", accelerator='Ctrl+F5', command=self.split)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
@@ -112,6 +113,8 @@ class CsvFileSpliter():
             subset.to_csv(str(filenamesave), header=True)
         else:
             subset.to_csv(str(filenamesave), header=False)
+        msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
+
 
 
     def split(self):
@@ -123,7 +126,7 @@ class CsvFileSpliter():
         elif  int(self.startinglinet.get(1.0, END)) < len(self.df) and int(self.lastlinet.get(1.0, END)) <= len(self.df):
             self.savesplitedfile()
             self.deletefromoriginal()
-            msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
+            
 
     def exitmenu(self):
         """exit menu function"""
