@@ -35,6 +35,7 @@ class CsvFileSpliter():
         self.filename = ""
         self.df = ""
         self.subset = ""
+        self.effectedlines = 0
 
         self.flineleb = Label(self.master, text="Enter the Starting Line")
         self.flineleb.pack()
@@ -114,7 +115,9 @@ class CsvFileSpliter():
     def deletefromoriginal(self):
         """delete from the original file"""
         if self.var2.get():
+            original = len(self.df)
             self.df.drop(self.df.index[int(self.startinglinet.get(1.0, END)) :int(self.lastlinet.get(1.0, END))], inplace=True)
+            self.effectedlines += abs(original - len(self.df))
 
     
     def savesplitedfile(self):
