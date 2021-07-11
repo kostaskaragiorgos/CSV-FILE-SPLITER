@@ -74,8 +74,8 @@ class CsvFileSpliter():
 
 
         self.show_menu = Menu(self.menu, tearoff=0)
-        self.show_menu.add_command(label="Show Splited", accelerator='Alt+F5', command= lambda: self.showinformation(str(self.subset),"SPLITED FILE"))
-        self.show_menu.add_command(label="Show Effected Lines", accelerator="Alt+E")
+        self.show_menu.add_command(label="Show Splited", accelerator='Alt+F5', command= lambda: self.showinformation(str(self.subset), "SPLITED FILE"))
+        self.show_menu.add_command(label="Show Effected Lines", accelerator="Alt+E", command= lambda: self.showinformation(str(self.effectedlines), "EFFECTED LINES"))
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -101,8 +101,6 @@ class CsvFileSpliter():
             msg.showerror("ERROR", "NO FILE TO SHOW")
         else:
             msg.showinfo(title=str(messagetitle), message=str(typeofinfo))
-
-
 
     def closefile(self):
         """ closes the csv file """
