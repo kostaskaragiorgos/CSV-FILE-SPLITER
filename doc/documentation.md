@@ -55,6 +55,8 @@ If there is no splited file to show an error message pops up
 
 An informative message pops up
 
+<p><img src="Show/splited file.png" title="Splited File"/></p>
+
 ## Show Effected Lines
 
 You can show the number of the effected lines by using menu Show --> Show Effected Lines or using Alt+E keybind
