@@ -75,6 +75,7 @@ class CsvFileSpliter():
 
         self.show_menu = Menu(self.menu, tearoff=0)
         self.show_menu.add_command(label="Show Splited", accelerator='Alt+F5', command=self.showsplited)
+        self.show_menu.add_command(label="Show Effected Lines", accelerator="Alt+E")
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -95,7 +96,13 @@ class CsvFileSpliter():
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
-    
+    def showinformation(self, typeofinfo=None, messagetitle=None):
+        if not isinstance(self.subset, pd.DataFrame):
+            msg.showerror("ERROR", "NO FILE TO SHOW")
+        else:
+            msg.showinfo(title=str(messagetitle), message=str(typeofinfo))
+
+
     def showsplited(self):
         """shows the splited file"""
         if not isinstance(self.subset, pd.DataFrame):
