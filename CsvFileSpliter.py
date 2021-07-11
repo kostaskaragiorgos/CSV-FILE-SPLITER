@@ -23,7 +23,7 @@ def savefile():
     """
     filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
                                                 filetypes=(("csv files", "*.csv"),
-                                                            ("all files", "*.*")))
+                                                           ("all files", "*.*")))
 
     return filenamesave
 class CsvFileSpliter():
@@ -66,16 +66,19 @@ class CsvFileSpliter():
         self.file_menu = Menu(self.menu, tearoff=0)
         self.file_menu.add_command(label="Insert a csv file",
                                    accelerator='Ctrl+O', command=self.insertfile)
-        self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
-        self.file_menu.add_command(label="Save file", accelerator="Ctrl+S", command=self.savesplitedfile)
-        self.file_menu.add_command(label="Split", accelerator='Ctrl+F5', command=self.split)
+        self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4',
+                                   command=self.closefile)
+        self.file_menu.add_command(label="Save file", accelerator="Ctrl+S",
+                                   command=self.savesplitedfile)
+        self.file_menu.add_command(label="Split", accelerator='Ctrl+F5',
+                                   command=self.split)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
 
 
         self.show_menu = Menu(self.menu, tearoff=0)
-        self.show_menu.add_command(label="Show Splited", accelerator='Alt+F5', command= lambda: self.showinformation(str(self.subset), "SPLITED FILE"))
-        self.show_menu.add_command(label="Show Effected Lines", accelerator="Alt+E", command= lambda: self.showinformation(str(self.effectedlines), "EFFECTED LINES"))
+        self.show_menu.add_command(label="Show Splited", accelerator='Alt+F5', command=lambda: self.showinformation(str(self.subset), "SPLITED FILE"))
+        self.show_menu.add_command(label="Show Effected Lines", accelerator="Alt+E", command=lambda: self.showinformation(str(self.effectedlines), "EFFECTED LINES"))
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -92,8 +95,10 @@ class CsvFileSpliter():
         self.master.bind('<Control-s>', lambda event: self.savesplitedfile())
         self.master.bind('<Control-F5>', lambda event: self.split())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
-        self.master.bind('<Alt-F5>', lambda event: self.showinformation(str(self.subset),"SPLITED FILE"))
-        self.master.bind('<Alt-e>', lambda event: self.showinformation(str(self.effectedlines), "EFFECTED LINES"))
+        self.master.bind('<Alt-F5>', lambda event: self.showinformation(str(self.subset),
+                                                                        "SPLITED FILE"))
+        self.master.bind('<Alt-e>', lambda event: self.showinformation(str(self.effectedlines),
+                                                                       "EFFECTED LINES"))
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
