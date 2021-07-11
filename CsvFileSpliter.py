@@ -98,6 +98,12 @@ class CsvFileSpliter():
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
     def showinformation(self, typeofinfo=None, messagetitle=None):
+        """
+        Shows a type of information.
+        Args:
+            typeofinfo: the desired info
+            messagetitle: the pop up window title
+        """
         if not isinstance(self.subset, pd.DataFrame):
             msg.showerror("ERROR", "NO FILE TO SHOW")
         else:
