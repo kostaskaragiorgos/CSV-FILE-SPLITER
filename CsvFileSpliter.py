@@ -138,15 +138,17 @@ class CsvFileSpliter():
     
     def savesplitedfile(self):
         """saves the splited file"""
-        self.subset = self.df.iloc[int(self.startinglinet.get(1.0, END)):int(self.lastlinet.get(1.0, END))]
-        filenamesave = savefile()
-        if ".csv" not in filenamesave:
-            filenamesave = "test.csv"
-        if self.var1.get():
-            self.subset.to_csv(str(filenamesave), header=True)
+        if self.subset is "":
+            msg.showerror("ERROR", "NO SPLITED FILE TO SAVE")
         else:
-            self.subset.to_csv(str(filenamesave), header=False)
-        msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
+            filenamesave = savefile()
+            if ".csv" not in filenamesave:
+                filenamesave = "test.csv"
+            if self.var1.get():
+                self.subset.to_csv(str(filenamesave), header=True)
+            else:
+                self.subset.to_csv(str(filenamesave), header=False)
+            msg.showinfo("SUCCESS", "CSV FILE HAS SUCCESSFULLY SPLITED")
 
 
 
@@ -157,6 +159,7 @@ class CsvFileSpliter():
         elif int(str(self.startinglinet.get(1.0, END))) >= int(str(self.lastlinet.get(1.0, END))):
             msg.showerror("ERROR", "Starting line should be lower than the last line")
         elif  int(str(self.startinglinet.get(1.0, END))) < len(self.df) and int(str(self.lastlinet.get(1.0, END))) <= len(self.df):
+            self.subset = self.df.iloc[int(self.startinglinet.get(1.0, END)):int(self.lastlinet.get(1.0, END))]
             self.savesplitedfile()
             self.deletefromoriginal()
             
