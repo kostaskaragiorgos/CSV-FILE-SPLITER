@@ -4,13 +4,17 @@
 
 ## Insert a csv
 
-You  can insert a csv file using File --> Insert a csv file
+You  can insert a csv file using File --> Insert a csv file or by using Ctrl+O keybind
 
 <p><img src="File/insert a csv.png" title = "insert a csv file menu"/></p>
 
+If you cancel the insertion or insert a not csv file an error message window pops up
 
+<p><img src="File/insert a csv error.png" title = "insert a csv file error"/></p>
 
+if you insert a csv file a success message window pops up
 
+<p><img src="File/successful insertion.png" title = "successful csv file insertion"/></p>
 
 ## Close File
 
