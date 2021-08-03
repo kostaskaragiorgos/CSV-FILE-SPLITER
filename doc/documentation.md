@@ -37,6 +37,12 @@ You can close the app using menu File --> Save file or using Ctrl+S keybind
 
 <p><img src="File/save file.png" title="close successful"/></p>
 
+if there is no file to save an error message window pops up
+
+<p>><img src="File/insert a csv error.png" title="close successful"/></p>
+
+
+
 ## Split
 
 You can close the app using menu File --> Split or using Ctrl+F5 keybind
