@@ -2,6 +2,16 @@
 
 # File menu
 
+## Insert a csv
+
+You  can insert a csv file using File --> Insert a csv file
+
+<p><img src="File/insert a csv.png" title = "insert a csv file menu"/></p>
+
+
+
+
+
 ## Close File
 
 You can close a file using File --> Close file or using Cltr+F4 keybind
