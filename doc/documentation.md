@@ -41,7 +41,9 @@ if there is no file to save an error message window pops up
 
 <p>><img src="File/no file save error.png" title="no file save error"/></p>
 
+else if the save is successful an informative message pops up
 
+<p>><img src="File/split success.png" title="save success"/></p>
 
 ## Split
 
