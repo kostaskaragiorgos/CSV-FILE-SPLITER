@@ -7,9 +7,10 @@ Split Ctrl+F5
 Exit Alt+F4
 =============
 Show menu
-===================
+==========================
 Show Splited Alt+F5
-===================
+Show Effected Lines Alt+E
+==========================
 About menu
 ============
 About Ctrl+I
