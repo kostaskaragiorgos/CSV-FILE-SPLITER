@@ -39,7 +39,7 @@ You can close the app using menu File --> Save file or using Ctrl+S keybind
 
 if there is no file to save an error message window pops up
 
-<p>><img src="File/insert a csv error.png" title="close successful"/></p>
+<p>><img src="File/no file save error.png" title="no file save error"/></p>
 
 
 
