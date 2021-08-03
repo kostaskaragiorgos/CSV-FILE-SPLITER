@@ -84,6 +84,7 @@ All project documentation is located in the `./doc`  folder.
   <li> Split Ctrl+F5</li>
   <li> Exit Alt+F4 </li>
   <li> Show Splited Alt+F5 </li>
+  <li> Show Effected Lines Alt+E </li>
   <li> About Ctrl+I </li>
   <li> Help Ctrl+F1 </li>
 </ul>
