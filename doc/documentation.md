@@ -55,7 +55,11 @@ if there is no file to split an error message window pops up
 
 <p><img src = "File/split no file error.png" title="Split error"/> </p>
 
-else if the save is successful an informative message pops up
+else if there is an user input error an error message window pops up 
+
+<p><img src = "File/user input error.png" title="user input error"/> </p>
+
+else if the split is successful an informative message pops up
 
 <p><img src="File/split success.png" title="save success"/></p>
 
