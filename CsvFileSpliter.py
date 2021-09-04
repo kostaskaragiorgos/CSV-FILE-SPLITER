@@ -126,6 +126,7 @@ class CsvFileSpliter():
         else:
             self.filename = ""
             self.df = ""
+            self.effectedlines = 0
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
 
     def deletefromoriginal(self):
