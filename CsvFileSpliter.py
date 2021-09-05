@@ -15,6 +15,17 @@ def aboutmenu():
     """about menu function"""
     msg.showinfo("About", "CSV FILE SPLITER\nVersion 1.0")
 
+def savechanges(dataframe, effectedlines, filename):
+    """saves the file after changes.
+    Args:
+        dataframe: the dataframe of the file
+        effectedlines: the number of effected lines
+        filename: the name of the file
+    """
+    if effectedlines > 0:
+        ans = msg.askquestion("SAVE CHANGES", "DO YOU WANT TO SAVE THE CHANGES BEFORE CLOSE???")
+        if ans:
+            dataframe.to_csv(filename)
 
 def savefile():
     """the desired file name of the user.
